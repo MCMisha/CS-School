@@ -15,7 +15,12 @@ namespace ConsoleAppHW1 // Note: actual namespace depends on the project name.
                 intNumber /= 12;
             }
 
-            return result == string.Empty ? "0" : result;
+            if (result == string.Empty)
+            {
+                return "0";
+            }
+            
+            return result;
         }
         
         static void Main(string[] args)
@@ -27,7 +32,15 @@ namespace ConsoleAppHW1 // Note: actual namespace depends on the project name.
             for (int i = a; i < b + 1; i++)
             {
                 string duodecimal = ConvertIntToDuodecimal(i);
-                if (duodecimal.Count(ch => ch == 'A') == 2)
+                uint countA = 0;
+                for(char c in duodecimal)
+                {
+                    if (c == 'A')
+                    {
+                        countA++;
+                    }
+                }
+                if (countA == 2)
                 {
                     Console.WriteLine(i);
                 }

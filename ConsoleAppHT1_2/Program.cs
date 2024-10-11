@@ -14,8 +14,15 @@ namespace ConsoleAppHW1 // Note: actual namespace depends on the project name.
             }
             
             int controlNumber = (11 - (sum % 11)) % 11;
-
-            string checkDigit = controlNumber == 10 ? "X" : controlNumber.ToString();
+            string checkDigit = string.Empty;
+            if (controlNumber == 10)
+            {
+                checkDigit = "X";
+            }
+            else
+            {
+                checkDigit = controlNumber.ToString();
+            }
             
             return isbn + checkDigit;
         }
