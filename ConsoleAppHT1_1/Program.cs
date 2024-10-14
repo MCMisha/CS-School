@@ -1,13 +1,20 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace ConsoleAppHW1 // Note: actual namespace depends on the project name.
+namespace ConsoleAppHT1_1 
 {
     internal class Program
     {
+        private const string digits = "0123456789AB";
         static string ConvertIntToDuodecimal(int intNumber)
         {
+            if (intNumber == 0)
+            {
+                return "0";
+            }
+
+            bool isNegative = intNumber < 0;
+            intNumber = Math.Abs(intNumber);
             string result = string.Empty;
-            const string digits = "0123456789AB";
             
             while (intNumber > 0)
             {
@@ -20,7 +27,7 @@ namespace ConsoleAppHW1 // Note: actual namespace depends on the project name.
                 return "0";
             }
             
-            return result;
+            return isNegative ? "-" + result : result;
         }
         
         static void Main(string[] args)
@@ -29,7 +36,7 @@ namespace ConsoleAppHW1 // Note: actual namespace depends on the project name.
             Console.WriteLine("Enter two integers: ");
             a = Convert.ToInt32(Console.ReadLine());
             b = Convert.ToInt32(Console.ReadLine());
-            for (int i = a; i < b + 1; i++)
+            for (int i = a < b ? a : b; i <= a < b ? b : a; i++)
             {
                 string duodecimal = ConvertIntToDuodecimal(i);
                 uint countA = 0;

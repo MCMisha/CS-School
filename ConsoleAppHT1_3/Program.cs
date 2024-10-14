@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace ConsoleAppHW1 // Note: actual namespace depends on the project name.
+namespace ConsoleAppHT1_3 // Note: actual namespace depends on the project name.
 {
     internal class Program
     {
@@ -45,11 +45,12 @@ namespace ConsoleAppHW1 // Note: actual namespace depends on the project name.
                     uniqueCount++;
                 }
             }
-            
+            int[] result = new int[uniqueCount];
+            Array.Copy(uniqueArray, result, uniqueCount);
             Console.WriteLine("Array with unique elements:");
-            for (int i = 0; i < uniqueCount; i++)
+            for (int i = 0; i < result.Length; i++)
             {
-                Console.Write(uniqueArray[i] + " ");
+                Console.Write(result[i] + " ");
             }
             Console.WriteLine();
         }
