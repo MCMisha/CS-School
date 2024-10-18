@@ -36,7 +36,13 @@ namespace ConsoleAppHT1_1
             Console.WriteLine("Enter two integers: ");
             a = Convert.ToInt32(Console.ReadLine());
             b = Convert.ToInt32(Console.ReadLine());
-            for (int i = a < b ? a : b; i <= a < b ? b : a; i++)
+            if (b < a)
+            {
+                int temp = a;
+                a = b;
+                b = temp;
+            }
+            for (int i = a; i <= b; i++)
             {
                 string duodecimal = ConvertIntToDuodecimal(i);
                 uint countA = 0;
