@@ -1,0 +1,120 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/modules.xml
+/.idea.CS-School.iml
+/projectSettingsUpdater.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# Ignore Visual Studio temporary files, build results, and
+# build directories
+*.user
+*.userosscache
+*.suo
+*.jsproj.user
+*.rsuser
+*.sln.docstates
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files (backup)
+*_i.c
+*_p.c
+*_i.h
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tmp
+*.tmp_proj
+*.log
+*.vspscc
+*.vssscc
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio project-related directories and files
+.vscode/
+.vs/
+.vscode/settings.json
+
+# NuGet packages
+*.nupkg
+# Include if you have any custom build outputs
+!src/**/*.dll
+!src/**/*.exe
+# If you have any specific toolsets or secrets
+.env
+.env.*
+
+# Rider project-related directories and files
+.idea/
+.idea/*
+
+# Rider-specific files
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/description.xml
+.idea/**/deployment.xml
+.idea/**/deploymentTarget.xml
+.idea/**/usage.statistics.xml
+.idea/**/shelf/
+.idea/dotnetUserPrefs.xml
+.idea/Modules.xml
+
+# Coverage reports and test results
+*.coverage
+*.coveragexml
+TestResults/
+.trx
+.coverage
+*.coverage
+*.codecoverage
+coverage/
+
+# Resharper
+_ReSharper*/
+
+# Code analysis reports
+*.xml
+
+# Ignore database, local tools
+*.mdf
+*.ldf
+*.sqlite
+tools/
+database/
+
+# Dotnet SDK-related
+.global.json
