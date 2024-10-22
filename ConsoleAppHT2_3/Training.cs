@@ -2,20 +2,28 @@
 
 public class Training
 {
-    private List<TrainingItem> _items;
+    private TrainingItem[] _items;
+    private int _count;
+    public string Description { get; set; } 
 
-    public Training()
+    public Training(string description)
     {
-        _items = new List<TrainingItem>();
+        Description = description ?? string.Empty;
+        _items = new TrainingItem[10];
+        _count = 0;
     }
 
-    // Method to add Lecture or PracticalLesson
     public void Add(TrainingItem item)
     {
-        _items.Add(item);
+        if (_count >= _items.Length)
+        {
+            Array.Resize(ref _items, _items.Length * 2);
+        }
+
+        _items[_count] = item;
+        _count++;
     }
 
-    // Method to check if all items are practical lessons
     public bool IsPractical()
     {
         foreach (var item in _items)
@@ -28,18 +36,16 @@ public class Training
         return true;
     }
 
-    // Method to clone the Training (deep clone)
     public Training Clone()
     {
         var clonedTraining = new Training();
         foreach (var item in _items)
         {
-            clonedTraining.Add(item.Clone()); // Use Clone method from Lecture and PracticalLesson
+            clonedTraining.Add(item.Clone());
         }
         return clonedTraining;
     }
 
-    // Method to print the details of the training
     public void PrintTraining()
     {
         foreach (var item in _items)

@@ -23,10 +23,10 @@ public class DiagonalMatrix
 
     public int this[int i, int j]
     {
-        get => i == j ? _elements[i] : 0;
+        get => i == j && i < elements.Length && j < elements.Length ? _elements[i] : 0;
         set
         {
-            if (i != j)
+            if (i != j && i >= elements.Length && j >= elements.Length)
             {
                 return;
             }
@@ -41,12 +41,16 @@ public class DiagonalMatrix
 
     public override bool Equals(object? obj)
     {
-        if (obj == null || GetType() != obj.GetType())
+        if (!(obj is DiagonalMatrix m) || Size != m.Size)
         {
             return false;
         }
-        DiagonalMatrix other = (DiagonalMatrix) obj;
-        return _elements.SequenceEqual(other._elements);
+        return _elements.SequenceEqual(m._elements);
+    }
+    
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(_elements, Size);
     }
 
     public override string ToString()

@@ -41,7 +41,7 @@ public class MassPoint3D
 
     public bool IsZero() => X == 0 && Y == 0 && Z == 0;
 
-    public double Distance(MassPoint3D point) =>
+    public double Distance(MassPoint3D point) => point == null ? 0.0 :
         Math.Sqrt(Math.Pow(X - point.X, 2) + Math.Pow(Y - point.Y, 2) + Math.Pow(Z - point.Z, 2));
 
 
